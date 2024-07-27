@@ -71,6 +71,7 @@ const AuthorizeWithGtihub = ({ nextStep }: { nextStep: Function }) => {
     </VStack>
   );
 };
+
 const AuthorizeWithLeetCode = ({ nextStep }: { nextStep: Function }) => {
   const [leetcodeSession, setLeetcodeSession] = useState<string | null>(null);
 
@@ -120,6 +121,7 @@ const AuthorizeWithLeetCode = ({ nextStep }: { nextStep: Function }) => {
     </VStack>
   );
 };
+
 const SelectRepositoryStep = ({ nextStep }: { nextStep: Function }) => {
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [repositoryURL, setRepositoryURL] = useState<string>('');

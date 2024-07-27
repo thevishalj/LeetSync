@@ -27,6 +27,7 @@ const hasCompletedRequirements = (
     userData.leetcode_session
   );
 };
+
 const getUserData = async (): Promise<Partial<UserGlobalData>> => {
   let userData: Partial<UserGlobalData> = {};
 

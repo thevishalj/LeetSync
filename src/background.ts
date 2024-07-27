@@ -18,6 +18,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   /* Will be used if we want to get messages from content scripts to background script */
   sendResponse({ status: 'OK' });
 });
+
 chrome.cookies.get({ name: 'LEETCODE_SESSION', url: 'https://leetcode.com/' }, function (cookie) {
   if (!cookie) return;
   chrome.storage.sync.set({ leetcode_session: cookie.value }, () => {
@@ -35,6 +36,7 @@ chrome.cookies.onChanged.addListener(function (info) {
     });
   }
 });
+
 chrome.storage.sync.onChanged.addListener((changes) => {
   console.log(`🚀 ~ file: background.ts:68 ~ changes:`, JSON.stringify(changes, null, 2));
 });
@@ -76,4 +78,5 @@ chrome.webRequest.onCompleted.addListener(
     types: ['xmlhttprequest'],
   },
 );
+
 export {};
